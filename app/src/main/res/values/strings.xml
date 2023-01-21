@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyProject</string>
+    <string name="total_questions">Total Questions</string>
+    <string name="the_question">The Question</string>
+    <string name="answer_A" />
+    <string name="answer_B" />
+    <string name="answer_C" />
+    <string name="answer_D" />
+    <string name="submit">Submit</string>
+</resources>
