@@ -8,16 +8,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn;
+    Button quizBtn;
+    Button translatorBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btn = (Button) findViewById(R.id.quiz_btn);
 
-        btn.setOnClickListener(view -> {
+        setTheme(R.style.Theme_MyProject);
+
+        setContentView(R.layout.activity_main);
+        quizBtn = (Button) findViewById(R.id.quiz_btn);
+        translatorBtn = (Button) findViewById(R.id.translator_btn);
+
+        quizBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+            startActivity(intent);
+        });
+
+        translatorBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, TranslatorActivity.class);
             startActivity(intent);
         });
     }
