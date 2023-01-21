@@ -1,2 +1,4 @@
-package cz.utb.fai.myproject;public class TranslatorActivity {
+package cz.utb.fai.myproject;
+
+public class TranslatorActivity {
 }
