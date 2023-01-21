@@ -2,15 +2,15 @@ package cz.utb.fai.myproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView totalQuestionsTextView;
     TextView questionTextView;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.quiz_activity);
 
         totalQuestionsTextView = findViewById(R.id.total_queries);
         questionTextView = findViewById(R.id.question);
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setTitle(status)
                 .setMessage("Your score is " + score + " out of  " + totalQuestion)
                 .setPositiveButton("Restart the Quiz", (dialogInterface, i) -> restartQuiz())
+                .setNeutralButton("Back to the Menu", (dialogInterface, i) -> backToMenu())
                 .setCancelable(false)
                 .show();
     }
@@ -80,6 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         score = 0;
         currentQuestionIndex = 0;
         loadNewQuestion();
+    }
+
+    public void backToMenu() {
+        Intent intent = new Intent(QuizActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override
