@@ -29,6 +29,9 @@ public class TranslatorActivity extends AppCompatActivity implements View.OnClic
         if (clickedBtn.getId() == R.id.back_btn) {
             Intent intent = new Intent(TranslatorActivity.this, MainActivity.class);
             startActivity(intent);
+        } else {
+            Intent intent = new Intent(TranslatorActivity.this, TranslatingActivity.class);
+            startActivity(intent);
         }
     }
 }
