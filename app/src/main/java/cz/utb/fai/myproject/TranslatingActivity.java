@@ -20,10 +20,10 @@ import java.util.Objects;
 
 public class TranslatingActivity extends AppCompatActivity {
 
-    TextView output_text;
-    EditText input_text;
-    String lang_pair;
-    Button translateBtn;
+    TextView outputText;
+    EditText inputText;
+    String langPair;
+    Button translate_btn;
 
     private Translator translatorEnglish;
 
@@ -31,15 +31,15 @@ public class TranslatingActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.translator_cze_eng_activity);
-        translateBtn = (Button) findViewById(R.id.translate_btn);
+        translate_btn = (Button) findViewById(R.id.translate_btn);
 
-        lang_pair = getIntent().getExtras().getString("langpair");
-        output_text = findViewById(R.id.output_text);
-        input_text = findViewById(R.id.input_text);
+        langPair = getIntent().getExtras().getString("langpair");
+        outputText = findViewById(R.id.output_text);
+        inputText = findViewById(R.id.input_text);
 
         TranslatorOptions translatorOptions = new TranslatorOptions.Builder()
-                .setSourceLanguage(Objects.requireNonNull(TranslateLanguage.fromLanguageTag(lang_pair.substring(0, 2))))
-                .setTargetLanguage(Objects.requireNonNull(TranslateLanguage.fromLanguageTag(lang_pair.substring(3))))
+                .setSourceLanguage(Objects.requireNonNull(TranslateLanguage.fromLanguageTag(langPair.substring(0, 2))))
+                .setTargetLanguage(Objects.requireNonNull(TranslateLanguage.fromLanguageTag(langPair.substring(3))))
                 .build();
 
         translatorEnglish = Translation.getClient(translatorOptions);
@@ -61,10 +61,10 @@ public class TranslatingActivity extends AppCompatActivity {
 
     public void getTranslation(View view) {
         downloadModel();
-        String input = String.valueOf(input_text.getText());
+        String input = String.valueOf(inputText.getText());
         translatorEnglish.translate(input)
-                .addOnSuccessListener(s -> output_text.setText(s))
-                .addOnFailureListener(e -> output_text.setText(e.toString()));
+                .addOnSuccessListener(s -> outputText.setText(s))
+                .addOnFailureListener(e -> outputText.setText(e.toString()));
     }
 
 

@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button quizBtn;
     Button translatorBtn;
+    Button weatherBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         quizBtn = (Button) findViewById(R.id.quiz_btn);
         translatorBtn = (Button) findViewById(R.id.translator_btn);
+        weatherBtn = (Button) findViewById(R.id.weather_btn);
 
         quizBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, QuizActivity.class);
@@ -28,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         translatorBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, TranslatorActivity.class);
+            startActivity(intent);
+        });
+
+        weatherBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, CityFinder.class);
             startActivity(intent);
         });
     }

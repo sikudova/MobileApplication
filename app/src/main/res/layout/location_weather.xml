@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9AFB93">
+
+    <Button
+        android:id="@+id/back_btn_weather_city"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="593dp"
+        android:background="#47ADBF"
+        android:text="Back to Menu"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="399dp"
+        android:layout_height="104dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="87dp"
+        android:gravity="center"
+        android:hint="Enter city name"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/weather_celsius"
+        android:layout_width="295dp"
+        android:layout_height="105dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="245dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="60sp" />
+
+    <Button
+        android:id="@+id/search_city_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="211dp"
+        android:onClick="getWeatherDetails"
+        android:text="Search" />
+
+    <TextView
+        android:id="@+id/feels_like"
+        android:layout_width="209dp"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="195dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/current_city_info"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="381dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:textSize="20sp" />
+
+</RelativeLayout>

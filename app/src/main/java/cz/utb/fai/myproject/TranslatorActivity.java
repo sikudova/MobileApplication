@@ -14,19 +14,19 @@ public class TranslatorActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.translator_activity);
-        Button eng_cze_btn = findViewById(R.id.eng_cze_btn);
-        Button cze_eng_btn = findViewById(R.id.cze_eng_btn);
-        Button back_btn = findViewById(R.id.back_btn);
-        eng_cze_btn.setOnClickListener(this);
-        cze_eng_btn.setOnClickListener(this);
-        back_btn.setOnClickListener(this);
+        Button engCzeBtn = findViewById(R.id.eng_cze_btn);
+        Button czeEngBtn = findViewById(R.id.cze_eng_btn);
+        Button backBtn = findViewById(R.id.back_btn_translator);
+        engCzeBtn.setOnClickListener(this);
+        czeEngBtn.setOnClickListener(this);
+        backBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         Button clickedBtn = (Button) view;
 
-        if (clickedBtn.getId() == R.id.back_btn) {
+        if (clickedBtn.getId() == R.id.back_btn_translator) {
             Intent intent = new Intent(TranslatorActivity.this, MainActivity.class);
             startActivity(intent);
         } else if (clickedBtn.getId() == R.id.eng_cze_btn) {

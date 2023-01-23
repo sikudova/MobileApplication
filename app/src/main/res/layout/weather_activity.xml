@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90F884">
+
+    <EditText
+        android:id="@+id/city_input"
+        android:layout_width="306dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="329dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:hint="City"
+        android:text="" />
+
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="270dp"
+        android:gravity="center|center_vertical"
+        android:onClick="getWeatherDetails"
+        android:text="Search" />
+
+    <Button
+        android:id="@+id/back_btn_weather"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="590dp"
+        android:background="#47ADBF"
+        android:text="Back to Menu"
+        android:textSize="16sp" />
+
+</RelativeLayout>
